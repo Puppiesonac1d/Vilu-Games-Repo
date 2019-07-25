@@ -5,12 +5,11 @@ using UnityEngine;
 public class movingBack : MonoBehaviour
 {
     public bool touch;
-    public float timer;
+    public Animator ani;
 
     // Start is called before the first frame update
     void Start()
     {
-        timer = 0;
         touch = false;
     }
 
@@ -19,31 +18,44 @@ public class movingBack : MonoBehaviour
     {
         if (touch)
         {
-            timer += Time.deltaTime;
-            if (timer < 0.5f)
-            {
-                transform.Rotate(0, 0, 10f * Time.deltaTime);
-            }
-            else if(timer >= 1f)
-            {
-
-            }
-            
+            ani.SetBool("passing", true);
+            ani.Play("movingBrush");
+        }
+        else
+        {
+            ani.SetBool("passing", false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        touch = true;
+        if (other.tag == "Body")
+        {
+            touch = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        touch = true;
+        if (other.tag == "Body")
+        {
+            if (other.GetComponentInParent<Rigidbody>().velocity.magnitude > 0)
+            {
+                touch = true;
+            }
+            else
+            {
+                touch = false;
+                Debug.Log("STAHP!!!!!");
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        touch = false;
+        if (other.tag == "Body")
+        {
+            touch = false;
+        }
     }
 }

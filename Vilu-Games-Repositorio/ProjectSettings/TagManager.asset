@@ -13,6 +13,7 @@ TagManager:
   - Hand
   - ObjetoSuelto
   - ObjetoInventario
+  - ObjetoEspecial
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Marker
   - Objects
   - Inventory
-  - 
+  - Bush
   - 
   - 
   - 

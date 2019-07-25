@@ -22,7 +22,7 @@ public class Embers : MonoBehaviour
         Flow();
     }
 
-    public void Flow() // FUCK
+    public void Flow() // GLOWING LIGHT
     {
         if (intensity >= 3)
         {
