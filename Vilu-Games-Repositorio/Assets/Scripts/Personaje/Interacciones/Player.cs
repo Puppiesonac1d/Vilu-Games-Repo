@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public VidaJugador vida;
     public float leftSpeed;
     public float rightSpeed;
+    public bool hasRadio;
 
     // Movement
     public bool isMoving;

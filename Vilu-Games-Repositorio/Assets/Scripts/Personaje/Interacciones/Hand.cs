@@ -84,6 +84,27 @@ public class Hand : MonoBehaviour
         {
             contacts.Add(other.gameObject.GetComponent<Interact>());
         }
+
+        if (other.tag == "ObjetoEspecial")
+        {
+            if (grabbing.GetStateDown(pose.inputSource))
+            {
+                Destroy(other.gameObject);
+                pl.hasRadio = true;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "ObjetoEspecial")
+        {
+            if (grabbing.GetStateDown(pose.inputSource))
+            {
+                Destroy(other.gameObject);
+                pl.hasRadio = true;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
