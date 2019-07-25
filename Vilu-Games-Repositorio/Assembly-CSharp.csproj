@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{03964DA1-FD6E-C828-5A11-F4A2401A275D}</ProjectGuid>
+    <ProjectGuid>{F397D59E-DB0A-5FEC-090A-2377C7293C05}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,6 +64,13 @@
   <ItemGroup>
     <Compile Include="Assets\EFECTOS (PARTICULAS)\Seguir_Jugador.cs" />
     <Compile Include="Assets\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />
+    <Compile Include="Assets\Scripts\Embers.cs" />
+    <Compile Include="Assets\Scripts\movingBack.cs" />
+    <Compile Include="Assets\Scripts\Personaje\Interacciones\Hand.cs" />
+    <Compile Include="Assets\Scripts\Personaje\Interacciones\Interact.cs" />
+    <Compile Include="Assets\Scripts\Personaje\Interacciones\Player.cs" />
+    <Compile Include="Assets\Scripts\Personaje\Movimiento\MovementTouchpad.cs" />
+    <Compile Include="Assets\Scripts\Personaje\VidaJugador.cs" />
     <None Include="Assets\Terrain Blending Starter Kit\Assets\Shaders\TerrainSplatmapCommonBlend.cginc" />
     <None Include="Assets\MOSS.shader" />
     <None Include="Assets\Terrain Blending Starter Kit\Assets\Shaders\PBR_IntersectionMask.shader" />
@@ -75,31 +82,31 @@
     <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Standard Diffuse Bump.shader" />
     <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/VegetationTest/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -284,17 +291,17 @@
     <Reference Include="nunit.framework">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Valve.Newtonsoft.Json">
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/VegetationTest/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/VegetationTest/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/VegetationTest/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>D:/VegetationTest/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -644,23 +651,27 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{451B43B9-E2A1-318B-59CA-B31537A5D8B8}</Project>
+      <Project>{5DEBD697-1BA6-EBC0-8163-B454D0DDB168}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{D332F5CF-0D60-497C-160D-6BCA573786A6}</Project>
+      <Name>SteamVR_Actions</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
-      <Project>{B307144C-78D7-45DF-5FF2-ED960E9E2158}</Project>
+      <Project>{B837CA81-DE4B-DF9D-2D6D-E3E474D02197}</Project>
       <Name>SteamVR_Input_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Editor.csproj">
-      <Project>{68C75B60-A674-D04C-2B13-26A6EEC2CEEB}</Project>
+      <Project>{5BCB694D-3E3B-7203-BFB5-44B84E9F933B}</Project>
       <Name>SteamVR_Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR.csproj">
-      <Project>{9637887A-681E-8D2E-32D6-B659E2A617BF}</Project>
+      <Project>{DC0028B0-7FF5-D619-63E0-F4E2E268F19B}</Project>
       <Name>SteamVR</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{6DCEE2F5-9D13-3090-E536-CC09D4D3159F}</Project>
+      <Project>{5A8418A9-580D-3DC6-D923-35485E4697BD}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
   </ItemGroup>
