@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     // References
     private Transform parent;
     private AudioSource aud;
+    public Material MotionBlur;
     public Animator an;
     public VidaJugador vida;
     public float leftSpeed;
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
     {
         leftSpeed = leftHand.handSpeed;
         rightSpeed = rightHand.handSpeed;
-
+        Stunned();
         GetHand(); // get current hand using button
 
         if (isMoving)
@@ -176,6 +177,30 @@ public class Player : MonoBehaviour
         if (!aud.isPlaying)
         {
             aud.Play();
+        }
+    }
+
+    public void Stunned()
+    {
+        if (hasRadio)
+        {
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.8f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.8f * Time.deltaTime);
+        }
+        else
+        {
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.1f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.1f * Time.deltaTime);
+        }
+
+        if (MotionBlur.GetFloat("_intensity") >= 1)
+        {
+            MotionBlur.SetFloat("_intensity", 1);
+        }
+
+        if (MotionBlur.GetFloat("_move") >= 1)
+        {
+            MotionBlur.SetFloat("_move", 1);
         }
     }
     #endregion

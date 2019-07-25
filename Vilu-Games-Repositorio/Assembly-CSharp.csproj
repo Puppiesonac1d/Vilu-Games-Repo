@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Personaje\Interacciones\Player.cs" />
     <Compile Include="Assets\Scripts\Personaje\Movimiento\MovementTouchpad.cs" />
     <Compile Include="Assets\Scripts\Personaje\VidaJugador.cs" />
+    <Compile Include="Assets\Scripts\Shadering.cs" />
     <None Include="Assets\Terrain Blending Starter Kit\Assets\Shaders\TerrainSplatmapCommonBlend.cginc" />
     <None Include="Assets\MOSS.shader" />
     <None Include="Assets\Terrain Blending Starter Kit\Assets\Shaders\PBR_IntersectionMask.shader" />
@@ -80,6 +81,7 @@
     <None Include="Assets\Arboles\Ulmo\Material\Vegetation.shader" />
     <None Include="Assets\Terrain Blending Starter Kit\Assets\Shaders\Standard-FirstPass Blend.shader" />
     <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Standard Diffuse Bump.shader" />
+    <None Include="Assets\Shaders\MotionBlur.shader" />
     <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Vilu-Llanos/Desktop/Vilu-Games/Vilu-Game-Alpha/Vilu-Games-Repo/Vilu-Games-Repositorio/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
