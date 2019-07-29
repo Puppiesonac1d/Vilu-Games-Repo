@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     // References
     private Transform parent;
     private AudioSource aud;
+    private Ray ray;
+    public GameObject head;
     public Material MotionBlur;
     public Animator an;
     public VidaJugador vida;
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
     public bool hasRadio, spooked;
 
     // Movement
+    public string see;
     public bool isMoving;
     public float markDistanceX;
     public float markDistanceY;
@@ -42,6 +45,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit;
+        
+        if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 20))
+        {
+            see = hit.collider.gameObject.name;
+            if (hit.collider.gameObject.name == "Enemy") // SURPRISE!!!
+            {
+                spooked = true;
+                Destroy(hit.collider.gameObject);
+                
+            }
+        }
+
         leftSpeed = leftHand.handSpeed;
         rightSpeed = rightHand.handSpeed;
         Stunned();
@@ -66,15 +82,15 @@ public class Player : MonoBehaviour
             aud.Stop();
         }
 
-        if (currentHand)
+        if (currentHand) // cuando se usa un control
         {
-            DistanceContr();
+            DistanceContr(); // Controlador de la distancia del marcador
 
-            if (!currentHand.go)
+            if (!currentHand.go) // Si no existe el marcador no hace NADA
             {
                 return;
             }
-            else
+            else // Calcular distancias de los ejes
             {
                 markDistanceX = transform.position.x - currentHand.go.transform.position.x;
                 markDistanceY = transform.position.y - currentHand.go.transform.position.y;
@@ -105,7 +121,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Marker")
         {
             isMoving = false;
-            Destroy(other.gameObject); // destroy marker2 on collision
+            Destroy(other.gameObject); // destroy marker on collision
         }
 
         if (other.tag == "Finish")
@@ -144,7 +160,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GetHand()
+    public void GetHand() // Que control se esta usando
     {
         if (rightHand.isUsing)
         {
@@ -178,19 +194,19 @@ public class Player : MonoBehaviour
         {
             aud.Play();
         }
-    }
+    } // no funciona
 
     public void Stunned()
     {
         if (spooked)
         {
-            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.3f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.3f * Time.deltaTime);
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.6f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.6f * Time.deltaTime);
         }
         else
         {
-            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.5f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.5f * Time.deltaTime);
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.3f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.3f * Time.deltaTime);
         }
 
         if (MotionBlur.GetFloat("_intensity") >= 1)
@@ -214,6 +230,7 @@ public class Player : MonoBehaviour
         {
             MotionBlur.SetFloat("_move", 0);
         }
-    }
+    } // controlador de vision cuando el jugador se asusta
+    
     #endregion
 }
