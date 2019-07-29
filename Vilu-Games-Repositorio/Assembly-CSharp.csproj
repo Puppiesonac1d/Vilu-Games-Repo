@@ -62,8 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EFECTOS (PARTICULAS)\Seguir_Jugador.cs" />
-    <Compile Include="Assets\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />
+    <Compile Include="Assets\_Naturaleza\EFECTOS (PARTICULAS)\Seguir_Jugador.cs" />
+    <Compile Include="Assets\_Naturaleza\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />
     <Compile Include="Assets\Scripts\Embers.cs" />
     <Compile Include="Assets\Scripts\movingBack.cs" />
     <Compile Include="Assets\Scripts\Personaje\Interacciones\Hand.cs" />
@@ -77,8 +77,8 @@
     <None Include="Assets\Terrain Blending Starter Kit\Assets\Shaders\PBR_IntersectionMask.shader" />
     <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Emissive Diffuse.shader" />
     <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump Cutout.shader" />
-    <None Include="Assets\Grass And Flowers Pack 1\Example Scene\Skyboxes\_skybox info.txt" />
-    <None Include="Assets\Arboles\Ulmo\Material\Vegetation.shader" />
+    <None Include="Assets\_Naturaleza\Grass And Flowers Pack 1\Example Scene\Skyboxes\_skybox info.txt" />
+    <None Include="Assets\_Naturaleza\Arboles\Ulmo\Material\Vegetation.shader" />
     <None Include="Assets\Terrain Blending Starter Kit\Assets\Shaders\Standard-FirstPass Blend.shader" />
     <None Include="Assets\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Standard Diffuse Bump.shader" />
     <None Include="Assets\Shaders\MotionBlur.shader" />
