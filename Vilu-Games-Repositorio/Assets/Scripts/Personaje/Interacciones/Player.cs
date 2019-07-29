@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public VidaJugador vida;
     public float leftSpeed;
     public float rightSpeed;
-    public bool hasRadio;
+    public bool hasRadio, spooked;
 
     // Movement
     public bool isMoving;
@@ -182,25 +182,37 @@ public class Player : MonoBehaviour
 
     public void Stunned()
     {
-        if (hasRadio)
+        if (spooked)
         {
-            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.8f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.8f * Time.deltaTime);
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.3f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.3f * Time.deltaTime);
         }
-        else if(!hasRadio && MotionBlur.GetFloat("_intensity") == 1)
+        else
         {
-            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.1f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.1f * Time.deltaTime);
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.5f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.5f * Time.deltaTime);
         }
 
         if (MotionBlur.GetFloat("_intensity") >= 1)
         {
             MotionBlur.SetFloat("_intensity", 1);
+            spooked = false;
         }
 
         if (MotionBlur.GetFloat("_move") >= 1)
         {
             MotionBlur.SetFloat("_move", 1);
+            spooked = false;
+        }
+
+        if (MotionBlur.GetFloat("_intensity") <= 0)
+        {
+            MotionBlur.SetFloat("_intensity", 0);
+        }
+
+        if (MotionBlur.GetFloat("_move") <= 0)
+        {
+            MotionBlur.SetFloat("_move", 0);
         }
     }
     #endregion
