@@ -200,13 +200,13 @@ public class Player : MonoBehaviour
     {
         if (spooked)
         {
-            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.6f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.6f * Time.deltaTime);
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.8f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.5f * Time.deltaTime);
         }
         else
         {
-            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.3f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.3f * Time.deltaTime);
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.4f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.2f * Time.deltaTime);
         }
 
         if (MotionBlur.GetFloat("_intensity") >= 1)
