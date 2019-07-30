@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
             MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.8f * Time.deltaTime);
             MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.8f * Time.deltaTime);
         }
-        else
+        else if(!hasRadio && MotionBlur.GetFloat("_intensity") == 1)
         {
             MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.1f * Time.deltaTime);
             MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.1f * Time.deltaTime);
