@@ -11,7 +11,8 @@ public class EventManager : MonoBehaviour
     public Player player;
 
     //Triggers
-    bool hasRadio;
+    bool hasRadio; // Tiene mapa
+    bool spooked; // Jugador ve algo perturbador
 
     //Eventos
     public UnityEvent radioAuto;
@@ -22,6 +23,8 @@ public class EventManager : MonoBehaviour
         EventoRadioAuto();
     }
 
+    #region Primer ACTO
+    // RADIO
     void EventoRadioAuto()
     {
         hasRadio = player.hasRadio;
@@ -31,4 +34,19 @@ public class EventManager : MonoBehaviour
             Debug.Log("Evento 1 disparado");
         }
     }
+    #endregion
+
+    #region Segundo ACTO
+    // Mancha de sangre
+
+    // Campamento
+
+    // Lloviendo
+    #endregion
+
+    #region ACTO FINAL
+    // Cadaver
+
+    // Desaparicion Enemigo
+    #endregion
 }

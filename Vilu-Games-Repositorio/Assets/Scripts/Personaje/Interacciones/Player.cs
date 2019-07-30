@@ -57,10 +57,9 @@ public class Player : MonoBehaviour
                 
             }
         }
-
+        Stunned();
         leftSpeed = leftHand.handSpeed;
         rightSpeed = rightHand.handSpeed;
-        Stunned();
         GetHand(); // get current hand using button
 
         if (isMoving)
@@ -209,6 +208,12 @@ public class Player : MonoBehaviour
             MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.2f * Time.deltaTime);
         }
 
+        ControladorMotionBlur();
+        
+    } // controlador de vision cuando el jugador se asusta
+
+    public void ControladorMotionBlur()
+    {
         if (MotionBlur.GetFloat("_intensity") >= 1)
         {
             MotionBlur.SetFloat("_intensity", 1);
@@ -230,7 +235,6 @@ public class Player : MonoBehaviour
         {
             MotionBlur.SetFloat("_move", 0);
         }
-    } // controlador de vision cuando el jugador se asusta
-    
+    }
     #endregion
 }

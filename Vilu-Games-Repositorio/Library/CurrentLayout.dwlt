@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 713, y: 494}
-  m_MaxSize: {x: 18008, y: 14044}
+  m_MinSize: {x: 707, y: 494}
+  m_MaxSize: {x: 18002, y: 14044}
   vertical: 0
-  controlID: 4600
+  controlID: 130
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,10 +136,10 @@ MonoBehaviour:
     y: 0
     width: 992
     height: 635
-  m_MinSize: {x: 436, y: 494}
-  m_MaxSize: {x: 14006, y: 14044}
+  m_MinSize: {x: 432, y: 494}
+  m_MaxSize: {x: 14002, y: 14044}
   vertical: 1
-  controlID: 4606
+  controlID: 34
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 306, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 4607
+  controlID: 35
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,8 +210,8 @@ MonoBehaviour:
     y: 0
     width: 676
     height: 363
-  m_MinSize: {x: 104, y: 122}
-  m_MaxSize: {x: 4004, y: 4022}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -240,10 +240,10 @@ MonoBehaviour:
     y: 363
     width: 992
     height: 272
-  m_MinSize: {x: 436, y: 272}
-  m_MaxSize: {x: 14006, y: 10022}
+  m_MinSize: {x: 432, y: 272}
+  m_MaxSize: {x: 14002, y: 10022}
   vertical: 0
-  controlID: 4671
+  controlID: 59
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,8 +317,8 @@ MonoBehaviour:
     y: 0
     width: 374
     height: 635
-  m_MinSize: {x: 277, y: 72}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -436,23 +436,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 50e3ffff
-      m_LastClickedID: -7344
-      m_ExpandedIDs: 50e3ffffc0e9ffff4a520000
+      m_SelectedIDs: e4e7ffff
+      m_LastClickedID: -6172
+      m_ExpandedIDs: 0cf2ffff48fbffff264d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: vr_glove_right_model_slim
-        m_OriginalName: vr_glove_right_model_slim
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -27960
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -498,9 +498,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 313.09555, y: 6.5222836, z: 502.9677}
+    m_Target: {x: 318.4856, y: 11.202738, z: 498.04276}
     speed: 2
-    m_Value: {x: 313.09555, y: 6.5222836, z: 502.9677}
+    m_Value: {x: 318.4856, y: 11.202738, z: 498.04276}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -529,13 +529,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.07842242, y: -0.91884285, z: 0.23394246, w: 0.3080011}
+    m_Target: {x: 0.015363141, y: -0.9842187, z: 0.13850635, w: 0.10913567}
     speed: 2
-    m_Value: {x: 0.078421794, y: -0.9188355, z: 0.2339406, w: 0.30799863}
+    m_Value: {x: 0.015363011, y: -0.9842104, z: 0.13850518, w: 0.10913475}
   m_Size:
-    m_Target: 2.9088674
+    m_Target: 10.681845
     speed: 2
-    m_Value: 2.9088674
+    m_Value: 10.681845
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -688,20 +688,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SteamVR/Prefabs
+    - Assets/Scripts/EventManager
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SteamVR/Prefabs
+  - Assets/Scripts/EventManager
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Vilu-Llanos\Desktop\Vilu-Games\Vilu-Game-Alpha\Vilu-Games-Repo\Vilu-Games-Repositorio
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 195}
-    m_SelectedIDs: f23a0000
-    m_LastClickedID: 15090
-    m_ExpandedIDs: 0000000030350000ce3c000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 1e360000
+    m_LastClickedID: 13854
+    m_ExpandedIDs: 00000000e82e0000a8320000fa36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,7 +729,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003035000000ca9a3b
+    m_ExpandedIDs: 00000000e82e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -27960
+  m_LastSelectedObjectID: -6172
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
