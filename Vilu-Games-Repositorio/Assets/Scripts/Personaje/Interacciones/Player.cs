@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     {
         RaycastHit hit;
         
-        if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 20))
+        if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 100))
         {
             see = hit.collider.gameObject.name;
             if (hit.collider.gameObject.name == "Enemy") // SURPRISE!!!

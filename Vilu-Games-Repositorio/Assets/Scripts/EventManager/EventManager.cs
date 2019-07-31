@@ -10,43 +10,137 @@ public class EventManager : MonoBehaviour
     //Referencias
     public Player player;
 
+    //Variables
+    public string progress, playerSees;
+    public int objectives, total;
+    private bool radioCompleted, sangreCompleted, campCompleted, corpseCompleted, finalCompleted;
+
     //Triggers
     bool hasRadio; // Tiene mapa
     bool spooked; // Jugador ve algo perturbador
 
     //Eventos
-    public UnityEvent radioAuto;
+    public UnityEvent RadioAuto;
+    public UnityEvent RastroSangre;
+    public UnityEvent Campamento;
+    //public UnityEvent Lluvia;
+    public UnityEvent Cadaver;
+    public UnityEvent Miedo;
     #endregion
+
+    void Start()
+    {
+        radioCompleted = false;
+        sangreCompleted = false;
+        campCompleted = false;
+        corpseCompleted = false;
+        finalCompleted = false;
+        objectives = 0;
+        total = 6;
+        progress = "Objectives completed: " + objectives + "/" + total;
+        Debug.Log(progress);
+    }
 
     void Update()
     {
-        EventoRadioAuto();
+        //What the player sees
+        playerSees = player.see;
+
+        if (!radioCompleted)
+        {
+            EventoRadioAuto();
+        }
+
+        if (!sangreCompleted)
+        {
+            EventoSangre();
+        }
+
+        if (!campCompleted)
+        {
+            EventoCamp();
+        }
+
+        if (!corpseCompleted)
+        {
+            EventoCadaver();
+        }
+
+        if (!finalCompleted)
+        {
+            EventoFinal();
+        }
     }
 
     #region Primer ACTO
-    // RADIO
-    void EventoRadioAuto()
+    public void EventoRadioAuto()
     {
+        // RADIO
         hasRadio = player.hasRadio;
         if (hasRadio == true)
         {
-            radioAuto.Invoke();
-            Debug.Log("Evento 1 disparado");
+            // Reproducir Sonido
+            RadioAuto.Invoke();
+            Debug.Log("Radio Picked up!");
+            objectives += 1;
+            Debug.Log(progress);
+            radioCompleted = true;
         }
     }
     #endregion
 
     #region Segundo ACTO
     // Mancha de sangre
-
+    public void EventoSangre()
+    {
+        if (playerSees == "Sangre")
+        {
+            RastroSangre.Invoke();
+            Debug.Log("Clue founded!");
+            objectives += 1;
+            Debug.Log(progress);
+            sangreCompleted = true;
+        }
+    }
     // Campamento
-
+    public void EventoCamp()
+    {
+        if (playerSees == "Carpa")
+        {
+            Campamento.Invoke();
+            Debug.Log("Clue Founded!");
+            objectives += 1;
+            Debug.Log(progress);
+            campCompleted = true;
+        }
+    }
     // Lloviendo
     #endregion
 
     #region ACTO FINAL
     // Cadaver
-
+    public void EventoCadaver()
+    {
+        if (playerSees == "CADAVER")
+        {
+            Campamento.Invoke();
+            Debug.Log("BRUH!");
+            objectives += 1;
+            Debug.Log(progress);
+            corpseCompleted = true;
+        }
+    }
     // Desaparicion Enemigo
+    public void EventoFinal()
+    {
+        if (playerSees == "ENEMY")
+        {
+            Campamento.Invoke();
+            Debug.Log("YOU BETTER RUN BRUH!");
+            objectives += 1;
+            Debug.Log(progress);
+            finalCompleted = true;
+        }
+    }
     #endregion
 }
