@@ -83,6 +83,7 @@ public class EventManager : MonoBehaviour
             RadioAuto.Invoke();
             Debug.Log("Radio Picked up!");
             objectives += 1;
+            progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             radioCompleted = true;
         }
@@ -98,6 +99,7 @@ public class EventManager : MonoBehaviour
             RastroSangre.Invoke();
             Debug.Log("Clue founded!");
             objectives += 1;
+            progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             sangreCompleted = true;
         }
@@ -110,6 +112,7 @@ public class EventManager : MonoBehaviour
             Campamento.Invoke();
             Debug.Log("Clue Founded!");
             objectives += 1;
+            progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             campCompleted = true;
         }
@@ -126,6 +129,7 @@ public class EventManager : MonoBehaviour
             Campamento.Invoke();
             Debug.Log("BRUH!");
             objectives += 1;
+            progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             corpseCompleted = true;
         }
@@ -138,6 +142,7 @@ public class EventManager : MonoBehaviour
             Campamento.Invoke();
             Debug.Log("YOU BETTER RUN BRUH!");
             objectives += 1;
+            progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             finalCompleted = true;
         }

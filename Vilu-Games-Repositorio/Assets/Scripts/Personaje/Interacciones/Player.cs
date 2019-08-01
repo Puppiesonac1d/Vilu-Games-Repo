@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            speed = 3;
+            speed = 5;
         }
     }
 
