@@ -183,6 +183,15 @@ public class Player : MonoBehaviour
         }
         else
         {
+            speed = 6;
+        }
+
+        if (speed > 8)
+        {
+            speed = 8;
+        }
+        else
+        {
             speed = 5;
         }
     }

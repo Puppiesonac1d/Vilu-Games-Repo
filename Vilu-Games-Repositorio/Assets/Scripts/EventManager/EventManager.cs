@@ -97,7 +97,7 @@ public class EventManager : MonoBehaviour
         if (playerSees == "Sangre")
         {
             RastroSangre.Invoke();
-            Debug.Log("Clue founded!");
+            Debug.Log("Clue founded: BLOOD!");
             objectives += 1;
             progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
@@ -110,7 +110,7 @@ public class EventManager : MonoBehaviour
         if (playerSees == "Carpa")
         {
             Campamento.Invoke();
-            Debug.Log("Clue Founded!");
+            Debug.Log("Clue Founded: CAMP!");
             objectives += 1;
             progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
@@ -127,7 +127,7 @@ public class EventManager : MonoBehaviour
         if (playerSees == "CADAVER")
         {
             Campamento.Invoke();
-            Debug.Log("BRUH!");
+            Debug.Log("BRUH: CADAVER!");
             objectives += 1;
             progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
@@ -137,7 +137,7 @@ public class EventManager : MonoBehaviour
     // Desaparicion Enemigo
     public void EventoFinal()
     {
-        if (playerSees == "ENEMY")
+        if (playerSees == "Enemy")
         {
             Campamento.Invoke();
             Debug.Log("YOU BETTER RUN BRUH!");
