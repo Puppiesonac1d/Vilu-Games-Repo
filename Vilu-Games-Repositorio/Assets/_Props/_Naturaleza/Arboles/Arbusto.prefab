@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touch: 0
+  ani: {fileID: 0}
 --- !u!95 &5191143657297829444
 Animator:
   serializedVersion: 3
