@@ -280,7 +280,7 @@ public class Hand : MonoBehaviour
         landingRay = new Ray(pointer.position, pointer.forward);
 
         // Show Marker at direction
-        if (Physics.Raycast(landingRay, out hit, 50f))
+        if (Physics.Raycast(landingRay, out hit, 100f))
         {
             if (!go)
             {

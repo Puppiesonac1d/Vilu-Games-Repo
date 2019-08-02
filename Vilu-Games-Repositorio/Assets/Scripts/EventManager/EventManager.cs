@@ -94,7 +94,7 @@ public class EventManager : MonoBehaviour
     // Mancha de sangre
     public void EventoSangre()
     {
-        if (playerSees == "Sangre")
+        if (playerSees == "Evt_SANGRE")
         {
             RastroSangre.Invoke();
             Debug.Log("Clue founded: BLOOD!");
