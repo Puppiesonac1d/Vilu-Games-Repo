@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class DetenerAnimacion: MonoBehaviour
 {
-    public Animation _animation;
-    // Start is called before the first frame update
-    void Start()
+    public AudioClip clip;
+    public AudioSource audioData;
+    [SerializeField]private Animator animatorController;
+ 
+    private void OnTriggerEnter(Collider other)
     {
-        _animation = this.gameObject.GetComponent<Animation>();
-        if(_animation == null)
+        if (other.CompareTag("Player"))
         {
-            Debug.LogWarning("Animación es nulll");
+            audioData.PlayOneShot(clip);
+            animatorController.SetBool("disparar", true);
+            animatorController.SetBool("brillando", true);
+           
         }
-        _animation.Play("Bengala");
-             _animation["Bengala"].speed = 0;
 
     }
 
