@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\_Props\_Naturaleza\EFECTOS (PARTICULAS)\Seguir_Jugador.cs" />
     <Compile Include="Assets\_Props\_Naturaleza\Grass And Flowers Pack 1\Example Scene\SimpleTextureDrawing.cs" />
+    <Compile Include="Assets\_Props\Bengala\DetenerAnimacion.cs" />
     <Compile Include="Assets\Scripts\Embers.cs" />
     <Compile Include="Assets\Scripts\movingBack.cs" />
     <Compile Include="Assets\Scripts\Personaje\Interacciones\Hand.cs" />
