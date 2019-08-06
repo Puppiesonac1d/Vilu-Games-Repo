@@ -63,6 +63,7 @@ public class movingBack : MonoBehaviour
         if (other.tag == "Body")
         {
             touch = false;
+            SuenaArbusto(0);
         }
     }
 
