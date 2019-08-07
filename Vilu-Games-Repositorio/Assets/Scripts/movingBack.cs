@@ -68,7 +68,8 @@ public class movingBack : MonoBehaviour
     }
 
     private AudioClip GetSonido(int sonido)
-    {// sonido = 0 = toque de arbusto
+    {
+        // sonido = 0 = toque de arbusto
         //sonido = 1 = atravezar arbusto
         return sonidosArbusto[sonido];
     }

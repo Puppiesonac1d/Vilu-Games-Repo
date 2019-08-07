@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     {
         RaycastHit hit;
         
-        if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 20))
+        if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 100))
         {
             see = hit.collider.gameObject.name;
             if (hit.collider.gameObject.name == "Enemy") // SURPRISE!!!
@@ -183,7 +183,16 @@ public class Player : MonoBehaviour
         }
         else
         {
-            speed = 3;
+            speed = 6;
+        }
+
+        if (speed > 8)
+        {
+            speed = 8;
+        }
+        else
+        {
+            speed = 5;
         }
     }
 
@@ -202,7 +211,7 @@ public class Player : MonoBehaviour
             MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.8f * Time.deltaTime);
             MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.5f * Time.deltaTime);
         }
-        else
+        else if(!hasRadio && MotionBlur.GetFloat("_intensity") == 1)
         {
             MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.4f * Time.deltaTime);
             MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.2f * Time.deltaTime);
