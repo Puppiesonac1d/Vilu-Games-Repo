@@ -15,14 +15,17 @@ public class Player : MonoBehaviour
     // References
     private Transform parent;
     private AudioSource aud;
+    private Ray ray;
+    public GameObject head;
     public Material MotionBlur;
     public Animator an;
     public VidaJugador vida;
     public float leftSpeed;
     public float rightSpeed;
-    public bool hasRadio;
+    public bool hasRadio, spooked;
 
     // Movement
+    public string see;
     public bool isMoving;
     public float markDistanceX;
     public float markDistanceY;
@@ -42,9 +45,21 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit;
+        
+        if (Physics.Raycast(head.transform.position, head.transform.forward, out hit, 100))
+        {
+            see = hit.collider.gameObject.name;
+            if (hit.collider.gameObject.name == "Enemy") // SURPRISE!!!
+            {
+                spooked = true;
+                Destroy(hit.collider.gameObject);
+                
+            }
+        }
+        Stunned();
         leftSpeed = leftHand.handSpeed;
         rightSpeed = rightHand.handSpeed;
-        Stunned();
         GetHand(); // get current hand using button
 
         if (isMoving)
@@ -66,15 +81,15 @@ public class Player : MonoBehaviour
             aud.Stop();
         }
 
-        if (currentHand)
+        if (currentHand) // cuando se usa un control
         {
-            DistanceContr();
+            DistanceContr(); // Controlador de la distancia del marcador
 
-            if (!currentHand.go)
+            if (!currentHand.go) // Si no existe el marcador no hace NADA
             {
                 return;
             }
-            else
+            else // Calcular distancias de los ejes
             {
                 markDistanceX = transform.position.x - currentHand.go.transform.position.x;
                 markDistanceY = transform.position.y - currentHand.go.transform.position.y;
@@ -105,7 +120,7 @@ public class Player : MonoBehaviour
         if (other.tag == "Marker")
         {
             isMoving = false;
-            Destroy(other.gameObject); // destroy marker2 on collision
+            Destroy(other.gameObject); // destroy marker on collision
         }
 
         if (other.tag == "Finish")
@@ -144,7 +159,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GetHand()
+    public void GetHand() // Que control se esta usando
     {
         if (rightHand.isUsing)
         {
@@ -168,7 +183,16 @@ public class Player : MonoBehaviour
         }
         else
         {
-            speed = 3;
+            speed = 6;
+        }
+
+        if (speed > 8)
+        {
+            speed = 8;
+        }
+        else
+        {
+            speed = 5;
         }
     }
 
@@ -178,29 +202,47 @@ public class Player : MonoBehaviour
         {
             aud.Play();
         }
-    }
+    } // no funciona
 
     public void Stunned()
     {
-        if (hasRadio)
+        if (spooked)
         {
             MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") + 0.8f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.8f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") + 0.5f * Time.deltaTime);
         }
         else if(!hasRadio && MotionBlur.GetFloat("_intensity") == 1)
         {
-            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.1f * Time.deltaTime);
-            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.1f * Time.deltaTime);
+            MotionBlur.SetFloat("_intensity", MotionBlur.GetFloat("_intensity") - 0.4f * Time.deltaTime);
+            MotionBlur.SetFloat("_move", MotionBlur.GetFloat("_move") - 0.2f * Time.deltaTime);
         }
 
+        ControladorMotionBlur();
+        
+    } // controlador de vision cuando el jugador se asusta
+
+    public void ControladorMotionBlur()
+    {
         if (MotionBlur.GetFloat("_intensity") >= 1)
         {
             MotionBlur.SetFloat("_intensity", 1);
+            spooked = false;
         }
 
         if (MotionBlur.GetFloat("_move") >= 1)
         {
             MotionBlur.SetFloat("_move", 1);
+            spooked = false;
+        }
+
+        if (MotionBlur.GetFloat("_intensity") <= 0)
+        {
+            MotionBlur.SetFloat("_intensity", 0);
+        }
+
+        if (MotionBlur.GetFloat("_move") <= 0)
+        {
+            MotionBlur.SetFloat("_move", 0);
         }
     }
     #endregion
