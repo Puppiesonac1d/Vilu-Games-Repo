@@ -37,6 +37,11 @@ public class Hand : MonoBehaviour
     public float time = 0;
     public float realTime = 0;
 
+    //Sonidos
+    private AudioSource audioPickup;
+   // private AudioClip sonidoPickup;
+
+
     private void Awake()
     {
         pose = GetComponent<SteamVR_Behaviour_Pose>();
@@ -122,6 +127,7 @@ public class Hand : MonoBehaviour
     {
         // get nearest
         current = GetNearest();
+     
 
         // null check
         if (!current)
@@ -311,6 +317,14 @@ public class Hand : MonoBehaviour
             ln.enabled = false;
             DebugMovement();
         }
+    }
+    #endregion
+
+    #region Sonido
+    private void SonidoCoger()
+    {
+       // audioPickup.PlayOneShot(sonidoPickup);
+        audioPickup.PlayOneShot(audioPickup.clip);
     }
     #endregion
 }

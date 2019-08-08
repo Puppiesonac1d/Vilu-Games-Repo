@@ -89,11 +89,11 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Vector2 MoveTouchpad
+        public virtual SteamVR_Action_Vector2 TouchpadMovement
         {
             get
             {
-                return SteamVR_Actions.default_MoveTouchpad;
+                return SteamVR_Actions.default_TouchpadMovement;
             }
         }
         

@@ -41,7 +41,7 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/default/in/MoveTouchpad",
+      "name": "/actions/default/in/TouchpadMovement",
       "type": "vector2"
     },
     {
