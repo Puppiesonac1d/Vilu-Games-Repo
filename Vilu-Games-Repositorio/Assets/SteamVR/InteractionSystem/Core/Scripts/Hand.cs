@@ -20,6 +20,7 @@ namespace Valve.VR.InteractionSystem
     //-------------------------------------------------------------------------
     public class Hand : MonoBehaviour
     {
+        #region STEAM
         // The flags used to determine how an object is attached to the hand.
         [Flags]
         public enum AttachmentFlags
@@ -336,7 +337,6 @@ namespace Valve.VR.InteractionSystem
             }
         }
 
-
         //-------------------------------------------------
         // Attach a GameObject to this GameObject
         //
@@ -350,7 +350,6 @@ namespace Valve.VR.InteractionSystem
             attachedObject.attachmentFlags = flags;
             attachedObject.attachedOffsetTransform = attachmentOffset;
             attachedObject.attachTime = Time.time;
-
             if (flags == 0)
             {
                 flags = defaultAttachmentFlags;
@@ -1639,9 +1638,11 @@ namespace Valve.VR.InteractionSystem
         {
             return trackedObject.GetDeviceIndex();
         }
+        
     }
 
 
     [System.Serializable]
     public class HandEvent : UnityEvent<Hand> { }
+    #endregion
 }

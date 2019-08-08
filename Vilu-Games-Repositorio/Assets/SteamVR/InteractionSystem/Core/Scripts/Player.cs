@@ -39,10 +39,11 @@ namespace Valve.VR.InteractionSystem
 
         [Tooltip("This action lets you know when the player has placed the headset on their head")]
         public SteamVR_Action_Boolean headsetOnHead = SteamVR_Input.GetBooleanAction("HeadsetOnHead");
+        
+        public bool allowToggleTo2D = true;
 
-		public bool allowToggleTo2D = true;
-
-
+        
+        
 		//-------------------------------------------------
 		// Singleton instance of the Player. Only one can exist at a time.
 		//-------------------------------------------------
@@ -148,7 +149,7 @@ namespace Valve.VR.InteractionSystem
 					{
 						continue;
 					}
-
+                    
 					return hands[j];
 				}
 
@@ -187,7 +188,7 @@ namespace Valve.VR.InteractionSystem
 				return null;
 			}
 		}
-
+        
 
 		//-------------------------------------------------
 		// Height of the eyes above the ground - useful for estimating player height.

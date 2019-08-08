@@ -23,7 +23,7 @@ public class Hand : MonoBehaviour
 
     // Reference
     public Hand otherHand;
-    public Player pl;
+    public PlayerV pl;
     private Transform pointer;
 
     // Markers

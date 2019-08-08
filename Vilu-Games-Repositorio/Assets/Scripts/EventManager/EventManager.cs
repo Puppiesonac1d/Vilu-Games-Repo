@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Valve.VR;
 
 
 public class EventManager : MonoBehaviour
 {
     #region Variables
     //Referencias
-    public Player player;
+    public Transform player;
 
     //Variables
     public string progress, playerSees;
@@ -43,8 +44,9 @@ public class EventManager : MonoBehaviour
 
     void Update()
     {
+        
         //What the player sees
-        playerSees = player.see;
+        playerSees = "";
 
         if (!radioCompleted)
         {
@@ -76,7 +78,7 @@ public class EventManager : MonoBehaviour
     public void EventoRadioAuto()
     {
         // RADIO
-        hasRadio = player.hasRadio;
+        //hasRadio = player.hasRadio;
         if (hasRadio == true)
         {
             // Reproducir Sonido
