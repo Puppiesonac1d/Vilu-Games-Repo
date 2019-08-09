@@ -26,6 +26,7 @@ public class EventManager : MonoBehaviour
     //public UnityEvent Lluvia;
     public UnityEvent Cadaver;
     public UnityEvent Miedo;
+    public RadioController radioController;
     #endregion
 
     void Start()
@@ -86,6 +87,7 @@ public class EventManager : MonoBehaviour
             progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             radioCompleted = true;
+            radioController.RadioDialogo(0);
         }
     }
     #endregion
@@ -102,6 +104,8 @@ public class EventManager : MonoBehaviour
             progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             sangreCompleted = true;
+            radioController.RadioDialogo(1);
+
         }
     }
     // Campamento
@@ -115,6 +119,7 @@ public class EventManager : MonoBehaviour
             progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             campCompleted = true;
+            radioController.RadioDialogo(2);
         }
     }
     // Lloviendo
@@ -132,6 +137,7 @@ public class EventManager : MonoBehaviour
             progress = "Objectives completed: " + objectives + "/" + total;
             Debug.Log(progress);
             corpseCompleted = true;
+            radioController.RadioDialogo(3);
         }
     }
     // Desaparicion Enemigo

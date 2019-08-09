@@ -20,12 +20,12 @@ public class RadioController : MonoBehaviour
         
     }
 
-    private AudioClip GetDialogo(int dialogo)
+    public AudioClip GetDialogo(int dialogo)
     {
         return dialogosRadio[dialogo];
     }
 
-    private void RadioDialogo(int sonido)
+    public void RadioDialogo(int sonido)
     {
         AudioClip clip = GetDialogo(sonido);
         audRadio.PlayOneShot(clip);
