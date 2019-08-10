@@ -46,7 +46,7 @@ public class EventManager : MonoBehaviour
     {
         
         //What the player sees
-        playerSees = "";
+        playerSees = player.GetComponent<PlayerMag>().see;
 
         if (!radioCompleted)
         {
@@ -78,7 +78,7 @@ public class EventManager : MonoBehaviour
     public void EventoRadioAuto()
     {
         // RADIO
-        //hasRadio = player.hasRadio;
+        hasRadio = player.GetComponent<PlayerMag>().hasRadio;
         if (hasRadio == true)
         {
             // Reproducir Sonido
