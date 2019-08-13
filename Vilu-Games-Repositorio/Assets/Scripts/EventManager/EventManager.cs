@@ -26,6 +26,7 @@ public class EventManager : MonoBehaviour
     //public UnityEvent Lluvia;
     public UnityEvent Cadaver;
     public UnityEvent Miedo;
+    //radio controller incrustado
     public RadioController radioController;
     #endregion
 
@@ -38,6 +39,7 @@ public class EventManager : MonoBehaviour
         finalCompleted = false;
         objectives = 0;
         total = 6;
+        radioController.GetComponent<RadioController>();
         progress = "Objectives completed: " + objectives + "/" + total;
         Debug.Log(progress);
     }
