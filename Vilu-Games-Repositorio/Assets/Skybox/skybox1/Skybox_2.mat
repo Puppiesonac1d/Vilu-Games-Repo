@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cielo
+  m_Name: Skybox_2
   m_Shader: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _MAPPING_LATITUDE_LONGITUDE_LAYOUT _SUNDISK_HIGH_QUALITY
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,27 +20,27 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BackTex:
-        m_Texture: {fileID: 2800000, guid: e2512a7d0a8d4944e810017af721f650, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2d00d5e7b6be3854d8964207bfe1e6c7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DownTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1ed2f09a76ab7524d8b85e152e683075, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FrontTex:
-        m_Texture: {fileID: 2800000, guid: 42ec3e37244994143989076840e810d5, type: 3}
+        m_Texture: {fileID: 2800000, guid: b8204c688fe221943a11898dd6368195, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeftTex:
-        m_Texture: {fileID: 2800000, guid: bcfc4027c3ea3854c92d10b319b467d9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 56e15c151cc91894598d7bb1e55bed67, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RightTex:
-        m_Texture: {fileID: 2800000, guid: ffde1b75035fdc74d9460bca4516967f, type: 3}
+        m_Texture: {fileID: 2800000, guid: b5c45c341798e5843b0884f994b23442, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
-        m_Texture: {fileID: 2800000, guid: a19d0ffa2a8684e44b1ffbb5478dd36b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0f7a692abf5eafc41a187787164cf813, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
